@@ -1,0 +1,49 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: fastapi-metrics
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: fastapi-metrics
+  template:
+    metadata:
+      labels:
+        app: fastapi-metrics
+    spec:
+      containers:
+      - name: fastapi-metrics
+        image: python:3.9-slim
+        ports:
+        - containerPort: 8000
+        command: ["/bin/bash", "-c"]
+        args:
+          - |
+            pip install fastapi uvicorn prometheus_client &&
+            cd /app &&
+            python main_with_metrics.py
+        volumeMounts:
+        - name: app-code
+          mountPath: /app
+        env:
+        - name: PYTHONUNBUFFERED
+          value: "1"
+      volumes:
+      - name: app-code
+        configMap:
+          name: fastapi-metrics-code
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: fastapi-service
+spec:
+  selector:
+    app: fastapi-metrics
+  ports:
+    - protocol: TCP
+      port: 8000
+      targetPort: 8000
+      nodePort: 30080
+  type: NodePort
