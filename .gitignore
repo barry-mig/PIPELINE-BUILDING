@@ -1,5 +1,165 @@
-﻿__pycache__/
-*.pyc
-.env
-venv/
-.vscode/
+﻿# ===================================================================
+# GITIGNORE FOR ML PIPELINE CUSTOMER CHURN PROJECT
+# ===================================================================
+# This file tells Git which files and folders to ignore when committing
+# We ignore files that are:
+# - Generated automatically (cache, compiled files)
+# - Contain sensitive information (API keys, passwords)
+# - Are user-specific (IDE settings, local configs)
+# - Are too large for Git (datasets, model files)
+
+# ===================================================================
+# PYTHON-SPECIFIC IGNORES
+# ===================================================================
+__pycache__/          # Python bytecode cache folders
+*.py[cod]             # Compiled Python files (.pyc, .pyo, .pyd)
+*$py.class            # Python class files
+*.so                  # Shared object files (compiled extensions)
+.Python               # Python installation files
+build/                # Build artifacts
+develop-eggs/         # Development artifacts
+dist/                 # Distribution artifacts
+downloads/            # Downloaded packages
+eggs/                 # Egg packages
+.eggs/                # Egg info
+lib/                  # Library files
+lib64/                # 64-bit library files
+parts/                # Parts directory
+sdist/                # Source distribution
+var/                  # Variable data
+wheels/               # Wheel packages
+share/python-wheels/  # Shared wheel packages
+*.egg-info/           # Egg metadata
+.installed.cfg        # Installation config
+*.egg                 # Egg packages
+MANIFEST              # Manifest files
+
+# ===================================================================
+# VIRTUAL ENVIRONMENTS
+# ===================================================================
+venv/                 # Virtual environment (venv)
+env/                  # Virtual environment (env)
+ENV/                  # Virtual environment (ENV)
+env.bak/              # Environment backup
+venv.bak/             # Virtual environment backup
+.venv/                # Hidden virtual environment
+pip-log.txt           # Pip installation logs
+pip-delete-this-directory.txt
+
+# ===================================================================
+# ENVIRONMENT & CONFIGURATION FILES (SENSITIVE DATA)
+# ===================================================================
+.env                  # Environment variables (may contain API keys, passwords)
+.env.local            # Local environment variables
+.env.development      # Development environment variables
+.env.production       # Production environment variables (NEVER commit!)
+.env.staging          # Staging environment variables
+config.ini            # Configuration files that may contain secrets
+secrets.json          # JSON files with secrets
+credentials.json      # Credential files
+*.key                 # Private key files
+*.pem                 # Certificate files
+
+# ===================================================================
+# IDE & EDITOR SPECIFIC FILES
+# ===================================================================
+.vscode/              # Visual Studio Code settings
+.idea/                # PyCharm/IntelliJ settings
+*.swp                 # Vim swap files
+*.swo                 # Vim swap files
+*~                    # Backup files
+.DS_Store             # macOS folder metadata
+.DS_Store?            # macOS folder metadata variants
+._*                   # macOS resource fork files
+.Spotlight-V100       # macOS Spotlight metadata
+.Trashes              # macOS trash metadata
+ehthumbs.db           # Windows thumbnail cache
+Thumbs.db             # Windows thumbnail cache
+
+# ===================================================================
+# DATA FILES & DATASETS (TOO LARGE FOR GIT)
+# ===================================================================
+data/                 # Data directory (contains CSV files, datasets)
+*.csv                 # CSV data files (can be large)
+*.json                # Large JSON data files
+*.parquet             # Parquet data files
+*.h5                  # HDF5 data files
+*.hdf5                # HDF5 data files
+*.pkl                 # Pickle files (serialized Python objects)
+*.pickle              # Pickle files
+datasets/             # Dataset directory
+raw_data/             # Raw data directory
+processed_data/       # Processed data directory
+
+# ===================================================================
+# MACHINE LEARNING SPECIFIC
+# ===================================================================
+models/               # Trained model files
+*.model               # Model files
+*.joblib              # Joblib serialized models
+*.pkl                 # Pickled models
+checkpoints/          # Model checkpoints
+logs/                 # Training logs
+tensorboard_logs/     # TensorBoard logs
+wandb/                # Weights & Biases logs
+mlruns/               # MLflow tracking
+.mlflow/              # MLflow configuration
+experiments/          # Experiment results
+outputs/              # Model outputs
+
+# ===================================================================
+# JUPYTER NOTEBOOKS (OPTIONAL - DECIDE BASED ON PROJECT NEEDS)
+# ===================================================================
+.ipynb_checkpoints/   # Jupyter notebook checkpoints
+*-checkpoint.ipynb    # Jupyter checkpoint files
+
+# ===================================================================
+# TESTING & COVERAGE
+# ===================================================================
+.pytest_cache/        # Pytest cache
+.coverage             # Coverage reports
+htmlcov/              # HTML coverage reports
+.tox/                 # Tox testing
+coverage.xml          # Coverage XML reports
+*.cover               # Coverage files
+.hypothesis/          # Hypothesis testing cache
+
+# ===================================================================
+# DOCUMENTATION BUILD
+# ===================================================================
+docs/_build/          # Sphinx documentation build
+site/                 # MkDocs site build
+
+# ===================================================================
+# TEMPORARY & CACHE FILES
+# ===================================================================
+*.tmp                 # Temporary files
+*.temp                # Temporary files
+*.log                 # Log files
+*.cache               # Cache files
+.cache/               # Cache directory
+tmp/                  # Temporary directory
+temp/                 # Temporary directory
+
+# ===================================================================
+# DOCKER & CONTAINERIZATION
+# ===================================================================
+.dockerignore         # Docker ignore file (keep this commented if you want to track it)
+# docker-compose.override.yml  # Local docker-compose overrides
+
+# ===================================================================
+# DEPLOYMENT & INFRASTRUCTURE
+# ===================================================================
+.terraform/           # Terraform state files
+*.tfstate             # Terraform state
+*.tfstate.backup      # Terraform state backup
+.terraform.lock.hcl   # Terraform lock file
+
+# ===================================================================
+# SPECIFIC TO OUR PROJECT
+# ===================================================================
+# Add any project-specific files to ignore here
+# For example:
+# customer_data.csv     # If you have specific data files
+# api_keys.txt          # If you have API key files
+# local_config.py       # If you have local configuration files

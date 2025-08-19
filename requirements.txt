@@ -1,3 +1,173 @@
-﻿fastapi==0.104.1
+﻿# ===================================================================
+# PRODUCTION-READY ML PIPELINE REQUIREMENTS
+# ===================================================================
+# This file lists all Python packages needed to run the Customer Churn 
+# Prediction API in production. Each package serves a specific purpose.
+# 
+# INSTALLATION: pip install -r requirements.txt
+# ===================================================================
+
+# WEB FRAMEWORK & API SERVING
+# ---------------------------
+# FastAPI: Modern, fast web framework for building APIs with Python
+# - Automatic API documentation (Swagger UI)
+# - Request/response validation
+# - Async support for high performance
+fastapi==0.104.1
+
+# Uvicorn: ASGI server for running FastAPI applications
+# - Production-grade server with auto-reload
+# - Handles multiple concurrent requests
+# - Includes WebSocket support
 uvicorn[standard]==0.24.0
+
+# DATA VALIDATION & SERIALIZATION
+# --------------------------------
+# Pydantic: Data validation using Python type annotations
+# - Automatic request/response validation
+# - JSON serialization/deserialization
+# - Type safety for ML model inputs/outputs
 pydantic==2.4.2
+
+# MACHINE LEARNING & DATA PROCESSING
+# -----------------------------------
+# NumPy: Fundamental package for numerical computing
+# - Array operations for ML model inputs
+# - Mathematical functions
+numpy==1.24.3
+
+# Pandas: Data manipulation and analysis library
+# - DataFrame operations for data ingestion
+# - CSV/JSON data processing
+# - Data cleaning and transformation
+pandas==2.0.3
+
+# Scikit-learn: Machine learning library
+# - Pre-trained models (RandomForest, LogisticRegression)
+# - Model serialization (joblib)
+# - Data preprocessing utilities
+scikit-learn==1.3.0
+
+# PRODUCTION MONITORING & METRICS
+# --------------------------------
+# Prometheus Client: Metrics collection for monitoring
+# - Request count, response time tracking
+# - Custom business metrics
+# - Integration with Grafana dashboards
+prometheus-client==0.17.1
+
+# ASYNC & BACKGROUND TASKS
+# -------------------------
+# AsyncIO: Already included in Python 3.7+
+# - Concurrent request processing
+# - Background task execution
+# - Non-blocking I/O operations
+
+# HTTP CLIENT FOR TESTING
+# ------------------------
+# Requests: HTTP library for testing API endpoints
+# - Integration testing
+# - Health check monitoring
+# - External API calls
+requests==2.31.0
+
+# CONFIGURATION & ENVIRONMENT
+# ----------------------------
+# Python-dotenv: Load environment variables from .env file
+# - Database connection strings
+# - API keys and secrets
+# - Environment-specific configuration
+python-dotenv==1.0.0
+
+# DATABASE CONNECTIVITY (Choose based on your data source)
+# ---------------------------------------------------------
+# PostgreSQL adapter (uncomment if using PostgreSQL)
+# psycopg2-binary==2.9.7
+
+# MySQL adapter (uncomment if using MySQL)
+# PyMySQL==1.1.0
+
+# Redis client (uncomment if using Redis for caching)
+# redis==4.6.0
+
+# MongoDB adapter (uncomment if using MongoDB)
+# pymongo==4.5.0
+
+# SECURITY & AUTHENTICATION
+# --------------------------
+# PassLib: Password hashing utilities
+# - Secure password storage
+# - Authentication middleware
+passlib==1.7.4
+
+# Python-Jose: JWT token handling
+# - API authentication
+# - Secure token generation/validation
+python-jose[cryptography]==3.3.0
+
+# TESTING & DEVELOPMENT
+# ----------------------
+# Pytest: Testing framework
+# - Unit tests for API endpoints
+# - Integration tests
+# - Test coverage reporting
+pytest==7.4.0
+
+# Httpx: Async HTTP client for testing
+# - FastAPI test client
+# - Async test scenarios
+httpx==0.24.1
+
+# DEPLOYMENT & PRODUCTION
+# -----------------------
+# Gunicorn: Python WSGI HTTP Server (alternative to uvicorn)
+# - Production deployment
+# - Process management
+# - Load balancing
+gunicorn==21.2.0
+
+# LOGGING & ERROR TRACKING
+# -------------------------
+# Structlog: Structured logging
+# - JSON log formatting
+# - Request tracing
+# - Error context capture
+structlog==23.1.0
+
+# DATA SOURCES & INGESTION
+# -------------------------
+# SQLAlchemy: SQL toolkit and ORM
+# - Database connection pooling
+# - ORM for data models
+# - Migration support
+SQLAlchemy==2.0.20
+
+# Alembic: Database migration tool
+# - Schema version control
+# - Database upgrades/downgrades
+alembic==1.12.0
+
+# MODEL SERVING & OPTIMIZATION
+# -----------------------------
+# Joblib: Model serialization
+# - Save/load trained models
+# - Efficient numpy array storage
+joblib==1.3.2
+
+# CACHING & PERFORMANCE
+# ---------------------
+# Cachetools: In-memory caching utilities
+# - Response caching
+# - Model prediction caching
+# - Rate limiting
+cachetools==5.3.1
+
+# ===================================================================
+# PRODUCTION NOTES:
+# ===================================================================
+# 1. Pin exact versions for reproducible deployments
+# 2. Update packages regularly for security patches
+# 3. Use virtual environments (venv, conda, poetry)
+# 4. Consider using poetry or pipenv for dependency management
+# 5. Add safety checks: pip-audit for security vulnerabilities
+# ===================================================================
